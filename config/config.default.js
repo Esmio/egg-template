@@ -12,8 +12,21 @@ module.exports = appInfo => {
   config.security = {
     csrf: {
       enable: false,
-    }
-  }
+    },
+  };
+
+  config.sequelize = {
+    dialect: 'postgres',
+    host: 'localhost',
+    database: 'egg_template',
+    port: 5432,
+    username: 'esmio',
+    password: '',
+    pool: {
+      max: 10,
+      min: 1,
+    },
+  };
 
   return config;
 };
